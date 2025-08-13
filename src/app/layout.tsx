@@ -21,7 +21,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             <span className="brand-dot" />
             <div className="brand-text">
               <strong>Ruwini Wijesinghe</strong>
-              <span className="brand-sub">Postdoctoral research fellow</span>
+              <span className="brand-sub">Director Marketing</span>
             </div>
           </div>
           <nav className="topnav">
