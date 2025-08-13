@@ -51,7 +51,7 @@ export default function HomePage() {
       <div className="brandqr">
         <div className="card card-logo">
           <Image
-            src="/tourtub-logo.png" /* put your logo at public/tourtub-logo.png */
+            src="/tourtub-logo.jpg" /* put your logo at public/tourtub-logo.png */
             alt="Tourtub logo"
             width={220}
             height={220}
