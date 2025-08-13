@@ -1,53 +1,65 @@
 import Image from "next/image";
 import Link from "next/link";
-import QrCircle from "../components/QrCircle";
 import { FaWhatsapp, FaInstagram, FaFacebook } from "react-icons/fa";
 
 export default function HomePage() {
-  const qrValue = "https://site-ashen-omega.vercel.app/";
-
   return (
-    <section className="hero hero--tight">
-      {/* Left: photo */}
-      <div className="hero-photo">
+    <section className="flyer">
+      {/* Photo */}
+      <div className="flyer-photo">
         <Image
           src="/profile.jpg"
-          width={540}
-          height={540}
+          width={520}
+          height={520}
           alt="Profile picture"
-          className="hero-avatar"
+          className="flyer-avatar"
           priority
         />
       </div>
 
-      {/* Right: text + QR + socials */}
-      <div className="hero-text">
-        <h1 className="hero-name">Ruwini Wijesinghe</h1>
-        <h2 className="hero-subtitle">
-Director Marketing</h2>
-        <h3 className="hero-subtitle">
-Tourtub (Private) Limited</h3>
-        <p className="hero-desc">
-Accomplished, senior marketing professional with travel and retail marketing experience, encompassing strategic planning, qualitative & quantitative research, interactive marketing, creative development, media planning & buying, database/direct marketing, public relations, sales promotion, and visual merchandising, with the ability and skill set to provide creative, innovative, enthusiastic and forward-thinking leadership in a team environment. Focused on achieving continuous, improved business performance and best-in-class marketing.
+      {/* Headings */}
+      <div className="flyer-headings">
+        <h1 className="flyer-name">Ruwini Wijesinghe</h1>
+        <h2 className="flyer-title">Director Marketing</h2>
+        <h3 className="flyer-company">Tourtub (Private) Limited</h3>
+      </div>
+
+      {/* Divider */}
+      <hr className="flyer-rule" />
+
+      {/* Bio */}
+      <div className="flyer-bio">
+        <p>
+          Accomplished senior marketing professional with extensive travel and retail experience.
+          Expertise encompasses strategic planning, qualitative &amp; quantitative research,
+          interactive marketing, creative development, media planning &amp; buying,
+          database/direct marketing, public relations, sales promotion, and visual merchandising.
         </p>
+        <p>
+          Proven ability to provide creative, innovative, and forward-thinking leadership in team
+          environments. Focused on achieving continuous business performance improvement and
+          best-in-class marketing execution.
+        </p>
+      </div>
 
-        <div className="qr-and-social">
-          <div className="qr-card">
-            <QrCircle value={qrValue} />
-          </div>
+      {/* Divider */}
+      <hr className="flyer-rule" />
+{/* QR above socials (optional) */}
+<div className="flyer-qr">
+  <img src="/qr.png" alt="QR code" className="qr-img" />
+</div>
 
-          <div className="social-links">
-            <Link href="https://wa.me/61455177988" target="_blank" aria-label="WhatsApp" className="social">
-              <FaWhatsapp size={22} /><span>WhatsApp</span>
-            </Link>
-            <Link href="https://www.instagram.com/visit.sri.lanka/?igsh=MXYzenRxOXhhcWRmZA%3D%3D#" target="_blank" aria-label="Instagram" className="social">
-              <FaInstagram size={22} /><span>Instagram</span>
-            </Link>
-            <Link href="https://facebook.com/TourtubCeylon" target="_blank" aria-label="Facebook" className="social">
-              <FaFacebook size={22} /><span>Facebook</span>
-            </Link>
-          </div>
-        </div>
+      {/* Socials */}
+      <div className="flyer-socials">
+        <Link href="https://wa.me/947XXXXXXXX" target="_blank" className="social-btn" aria-label="WhatsApp">
+          <FaWhatsapp size={22} /><span>WhatsApp</span>
+        </Link>
+        <Link href="https://instagram.com/yourusername" target="_blank" className="social-btn" aria-label="Instagram">
+          <FaInstagram size={22} /><span>Instagram</span>
+        </Link>
+        <Link href="https://facebook.com/yourusername" target="_blank" className="social-btn" aria-label="Facebook">
+          <FaFacebook size={22} /><span>Facebook</span>
+        </Link>
       </div>
     </section>
   );
