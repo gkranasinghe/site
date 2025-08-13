@@ -1,14 +1,18 @@
-:root{
+:root {
   --bg:#f7f8fa;
-  --ink:#0f172a;        /* deep navy */
-  --gold:#d4af37;       /* elegant gold */
+  --ink:#0f172a;     /* deep navy */
+  --gold:#d4af37;    /* elegant gold */
   --line:#e5e7eb;
 }
 
-body{ margin:0; background:var(--bg); color:var(--ink); font-family: system-ui, -apple-system, "Segoe UI", Roboto, Inter, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol", sans-serif; }
+body{
+  margin:0; background:var(--bg); color:var(--ink);
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Inter, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol", sans-serif;
+}
+
 .page{ max-width:900px; margin:0 auto; padding:2rem 1.25rem 3rem; }
 
-/* ===== Flyer layout (centered) ===== */
+/* ===== Centered Flyer ===== */
 .flyer{ display:grid; justify-items:center; row-gap:1.25rem; text-align:center; }
 
 .flyer-photo{ display:flex; justify-content:center; }
@@ -25,19 +29,38 @@ body{ margin:0; background:var(--bg); color:var(--ink); font-family: system-ui, 
 /* separators */
 .flyer-rule{
   width:min(680px,94%); border:0; border-top:2px solid var(--line);
-  margin: .5rem 0 0;
+  margin:.5rem 0 0;
 }
 
-/* bio block (centered, readable, no hyphenation) */
+/* bio block */
 .flyer-bio{
   width:min(720px,94%); line-height:1.75; color:#4b5563;
-  hyphens:none; word-break:normal; overflow-wrap:normal;
+  hyphens:none; overflow-wrap:normal; word-break:normal;
 }
 .flyer-bio p{ margin:.6rem auto; }
 
-/* socials (icons + labels) */
+/* ===== Tourtub logo + QR side-by-side ===== */
+.brandqr{
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  gap:1rem;
+  width:min(560px,96%);
+  align-items:center;
+  justify-items:center;
+  margin-top:.25rem;
+}
+.card{
+  width:260px; height:260px;
+  display:grid; place-items:center;
+  background:#fff; border:2px solid var(--gold); border-radius:18px;
+  box-shadow:0 12px 36px -20px rgba(0,0,0,.22);
+}
+.card-logo .logo-img{ width:200px; height:auto; object-fit:contain; }
+.card-qr .qr-wrap{ display:grid; place-items:center; }
+
+/* ===== Socials ===== */
 .flyer-socials{
-  display:flex; gap:.8rem; flex-wrap:wrap; justify-content:center; margin-top:.25rem;
+  display:flex; gap:.8rem; flex-wrap:wrap; justify-content:center; margin-top:.4rem;
 }
 .social-btn{
   display:inline-flex; align-items:center; gap:.5rem;
@@ -49,23 +72,18 @@ body{ margin:0; background:var(--bg); color:var(--ink); font-family: system-ui, 
 .social-btn:hover{ transform:translateY(-1px); border-color:var(--gold); box-shadow:0 10px 28px -18px rgba(0,0,0,.22); }
 .social-btn svg{ flex:0 0 auto; }
 
-/* Optional QR block if you add it above socials */
-.flyer-qr{ margin-top:.25rem; }
-.qr-img{
-  width:132px; height:132px; display:block; margin:0 auto;
-  background:#fff; padding:.5rem; border:2px solid var(--gold); border-radius:16px;
-  box-shadow:0 10px 30px -18px rgba(0,0,0,.18);
-}
-
-/* Responsive */
+/* ===== Responsive ===== */
 @media (max-width:900px){
   .flyer-avatar{ width:300px; height:300px; }
+  .brandqr{ grid-template-columns:1fr; }
+  .card{ width:240px; height:240px; }
+  .card-logo .logo-img{ width:180px; }
 }
 
-/* Print */
+/* ===== Print ===== */
 @media print{
   body{ background:#fff!important; color:#000; }
   .page{ max-width:none; padding:0; }
   .flyer-avatar{ width:260px; height:260px; box-shadow:none; border:2px solid #000; }
-  .social-btn, .qr-img{ box-shadow:none; border-color:#999; }
+  .card{ box-shadow:none; border-color:#999; }
 }
