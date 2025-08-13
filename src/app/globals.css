@@ -1,7 +1,7 @@
 :root {
   --bg:#f7f8fa;
-  --ink:#0f172a;     /* deep navy */
-  --gold:#d4af37;    /* elegant gold */
+  --ink:#0f172a;
+  --gold:#d4af37;
   --line:#e5e7eb;
 }
 
@@ -12,7 +12,6 @@ body{
 
 .page{ max-width:900px; margin:0 auto; padding:2rem 1.25rem 3rem; }
 
-/* ===== Centered Flyer ===== */
 .flyer{ display:grid; justify-items:center; row-gap:1.25rem; text-align:center; }
 
 .flyer-photo{ display:flex; justify-content:center; }
@@ -26,20 +25,16 @@ body{
 .flyer-title{ margin:0; color:var(--gold); font-weight:700; font-size:clamp(1.1rem,2.6vw,1.5rem); }
 .flyer-company{ margin:.1rem 0 0; font-weight:600; font-size:clamp(1rem,2.3vw,1.25rem); color:#2b3446; }
 
-/* separators */
 .flyer-rule{
   width:min(680px,94%); border:0; border-top:2px solid var(--line);
   margin:.5rem 0 0;
 }
 
-/* bio block */
 .flyer-bio{
   width:min(720px,94%); line-height:1.75; color:#4b5563;
-  hyphens:none; overflow-wrap:normal; word-break:normal;
 }
 .flyer-bio p{ margin:.6rem auto; }
 
-/* ===== Tourtub logo + QR side-by-side ===== */
 .brandqr{
   display:grid;
   grid-template-columns: 1fr 1fr;
@@ -47,7 +42,6 @@ body{
   width:min(560px,96%);
   align-items:center;
   justify-items:center;
-  margin-top:.25rem;
 }
 .card{
   width:260px; height:260px;
@@ -58,21 +52,21 @@ body{
 .card-logo .logo-img{ width:200px; height:auto; object-fit:contain; }
 .card-qr .qr-wrap{ display:grid; place-items:center; }
 
-/* ===== Socials ===== */
-.flyer-socials{
-  display:flex; gap:.8rem; flex-wrap:wrap; justify-content:center; margin-top:.4rem;
+.social-pills{
+  display:flex; gap:14px; flex-wrap:wrap; justify-content:center; margin-top:14px;
 }
-.social-btn{
-  display:inline-flex; align-items:center; gap:.5rem;
-  padding:.6rem .95rem; background:#fff; color:var(--ink); text-decoration:none;
-  font-weight:700; border:1px solid var(--line); border-radius:999px;
+.pill{
+  display:flex; align-items:center; gap:10px;
+  padding:10px 16px;
+  background:#fff; color:var(--ink); text-decoration:none;
+  border:1px solid var(--line); border-radius:999px;
+  font-weight:700;
   box-shadow:0 6px 22px -14px rgba(0,0,0,.18);
   transition:transform .15s ease, box-shadow .15s ease, border-color .15s ease;
 }
-.social-btn:hover{ transform:translateY(-1px); border-color:var(--gold); box-shadow:0 10px 28px -18px rgba(0,0,0,.22); }
-.social-btn svg{ flex:0 0 auto; }
+.pill:hover{ transform:translateY(-1px); border-color:var(--gold); box-shadow:0 10px 28px -18px rgba(0,0,0,.22); }
+.pill .ico{ font-size:18px; }
 
-/* ===== Responsive ===== */
 @media (max-width:900px){
   .flyer-avatar{ width:300px; height:300px; }
   .brandqr{ grid-template-columns:1fr; }
@@ -80,10 +74,10 @@ body{
   .card-logo .logo-img{ width:180px; }
 }
 
-/* ===== Print ===== */
 @media print{
   body{ background:#fff!important; color:#000; }
   .page{ max-width:none; padding:0; }
   .flyer-avatar{ width:260px; height:260px; box-shadow:none; border:2px solid #000; }
   .card{ box-shadow:none; border-color:#999; }
+  .pill{ box-shadow:none; }
 }
