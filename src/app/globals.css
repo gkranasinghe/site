@@ -190,6 +190,21 @@ h1, h2, h3 {
   background: #fff;
   border: 1px solid var(--line);
 }
+.social-links {
+  display: flex;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.social-links a {
+  color: #333;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.social-links a:hover {
+  color: #0070f3; /* highlight color */
+  transform: scale(1.2);
+}
 
 /* ---------------- */
 /* Responsive       */

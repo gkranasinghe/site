@@ -1,4 +1,6 @@
 import Image from "next/image";
+import Link from "next/link";
+import { FaWhatsapp, FaInstagram, FaFacebook } from "react-icons/fa";
 import QrCircle from "../components/QrCircle";
 
 export default function HomePage() {
@@ -26,6 +28,18 @@ Accomplished, senior marketing professional with travel and retail marketing exp
 
         <div className="bubbles single-bubble">
           <QrCircle value={qrValue} />
+        </div>
+                {/* Social links */}
+        <div className="social-links">
+          <Link href="https://wa.me/947XXXXXXXX" target="_blank" aria-label="WhatsApp">
+            <FaWhatsapp size={32} />
+          </Link>
+          <Link href="https://instagram.com/yourusername" target="_blank" aria-label="Instagram">
+            <FaInstagram size={32} />
+          </Link>
+          <Link href="https://facebook.com/yourusername" target="_blank" aria-label="Facebook">
+            <FaFacebook size={32} />
+          </Link>
         </div>
       </div>
     </section>
