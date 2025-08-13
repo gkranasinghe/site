@@ -37,13 +37,13 @@ Accomplished, senior marketing professional with travel and retail marketing exp
           </div>
 
           <div className="social-links">
-            <Link href="https://wa.me/947XXXXXXXX" target="_blank" aria-label="WhatsApp" className="social">
+            <Link href="https://wa.me/61455177988" target="_blank" aria-label="WhatsApp" className="social">
               <FaWhatsapp size={22} /><span>WhatsApp</span>
             </Link>
-            <Link href="https://instagram.com/yourusername" target="_blank" aria-label="Instagram" className="social">
+            <Link href="https://www.instagram.com/visit.sri.lanka/?igsh=MXYzenRxOXhhcWRmZA%3D%3D#" target="_blank" aria-label="Instagram" className="social">
               <FaInstagram size={22} /><span>Instagram</span>
             </Link>
-            <Link href="https://facebook.com/yourusername" target="_blank" aria-label="Facebook" className="social">
+            <Link href="https://facebook.com/TourtubCeylon" target="_blank" aria-label="Facebook" className="social">
               <FaFacebook size={22} /><span>Facebook</span>
             </Link>
           </div>
