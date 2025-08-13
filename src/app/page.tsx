@@ -88,7 +88,7 @@ export default function HomePage() {
           aria-label="Instagram"
         >
           <FaInstagram className="ico" />
-          <span>visit.sri.lanka</span>
+          <span>@visit.sri.lanka</span>
         </Link>
 
         <Link
