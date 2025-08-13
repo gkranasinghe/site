@@ -1,7 +1,7 @@
 :root {
   --bg:#f7f8fa;
-  --ink:#0f172a;
-  --gold:#d4af37;
+  --ink:#0f172a;     /* deep navy */
+  --gold:#d4af37;    /* elegant gold */
   --line:#e5e7eb;
 }
 
@@ -12,49 +12,23 @@ body{
 
 .page{ max-width:900px; margin:0 auto; padding:2rem 1.25rem 3rem; }
 
-.flyer{ display:grid; justify-items:center; row-gap:1.25rem; text-align:center; }
+/* ===== Centered Flyer ===== */
+.flyer{ display:grid; justify-items:center; row-gap:1.0rem; text-align:center; }
 
+/* Photo */
 .flyer-photo{ display:flex; justify-content:center; }
 .flyer-avatar{
   width:360px; height:360px; object-fit:cover; border-radius:50%;
-  box-shadow:0 18px 60px -28px rgba(0,0,0,.35); border:4px solid var(--gold);
+  box-shadow:0 18px 60px -28px rgba(0,0,0,.35);
+  border:4px solid var(--gold); /* gold border around profile photo */
 }
 
-.flyer-headings{ display:grid; gap:.25rem; }
-.flyer-name{ font-size:clamp(2rem,5.2vw,3.2rem); letter-spacing:-.6px; margin:0; }
-.flyer-title{ margin:0; color:var(--gold); font-weight:700; font-size:clamp(1.1rem,2.6vw,1.5rem); }
-.flyer-company{ margin:.1rem 0 0; font-weight:600; font-size:clamp(1rem,2.3vw,1.25rem); color:#2b3446; }
-
-.flyer-rule{
-  width:min(680px,94%); border:0; border-top:2px solid var(--line);
-  margin:.5rem 0 0;
-}
-
-.flyer-bio{
-  width:min(720px,94%); line-height:1.75; color:#4b5563;
-}
-.flyer-bio p{ margin:.6rem auto; }
-
-.brandqr{
-  display:grid;
-  grid-template-columns: 1fr 1fr;
-  gap:1rem;
-  width:min(560px,96%);
-  align-items:center;
-  justify-items:center;
-}
-.card{
-  width:260px; height:260px;
-  display:grid; place-items:center;
-  background:#fff; border:2px solid var(--gold); border-radius:18px;
-  box-shadow:0 12px 36px -20px rgba(0,0,0,.22);
-}
-.card-logo .logo-img{ width:200px; height:auto; object-fit:contain; }
-.card-qr .qr-wrap{ display:grid; place-items:center; }
-
+/* Social pills (under photo) */
 .social-pills{
-  display:flex; gap:14px; flex-wrap:wrap; justify-content:center; margin-top:14px;
+  display:flex; gap:14px; flex-wrap:wrap; justify-content:center;
 }
+.social-pills--under-photo{ margin-top:.5rem; margin-bottom:.25rem; }
+
 .pill{
   display:flex; align-items:center; gap:10px;
   padding:10px 16px;
@@ -64,20 +38,49 @@ body{
   box-shadow:0 6px 22px -14px rgba(0,0,0,.18);
   transition:transform .15s ease, box-shadow .15s ease, border-color .15s ease;
 }
-.pill:hover{ transform:translateY(-1px); border-color:var(--gold); box-shadow:0 10px 28px -18px rgba(0,0,0,.22); }
+.pill:hover{ transform:translateY(-1px); border-color:#cfd2d8; box-shadow:0 10px 28px -18px rgba(0,0,0,.22); }
 .pill .ico{ font-size:18px; }
 
+/* Headings */
+.flyer-headings{ display:grid; gap:.25rem; }
+.flyer-name{ font-size:clamp(2rem,5.2vw,3.2rem); letter-spacing:-.6px; margin:0; }
+.flyer-title{ margin:0; color:#4a5568; font-weight:700; font-size:clamp(1.1rem,2.6vw,1.5rem); }
+.flyer-company{ margin:.1rem 0 0; font-weight:600; font-size:clamp(1rem,2.3vw,1.25rem); color:#2b3446; }
+
+/* separators */
+.flyer-rule{
+  width:min(680px,94%); border:0; border-top:2px solid var(--line);
+  margin:.5rem 0 0;
+}
+
+/* Bio */
+.flyer-bio{
+  width:min(720px,94%); line-height:1.75; color:#4b5563;
+}
+.flyer-bio p{ margin:.6rem auto; }
+
+/* Centered logo card (gold border) */
+.brand-logo{ display:flex; justify-content:center; width:100%; }
+.card{
+  width:260px; height:260px;
+  display:grid; place-items:center;
+  background:#fff; border-radius:18px;
+  border:2px solid var(--gold);          /* gold border around logo card */
+  box-shadow:0 12px 36px -20px rgba(0,0,0,.22);
+}
+.card-logo .logo-img{ width:200px; height:auto; object-fit:contain; }
+
+/* Responsive */
 @media (max-width:900px){
   .flyer-avatar{ width:300px; height:300px; }
-  .brandqr{ grid-template-columns:1fr; }
   .card{ width:240px; height:240px; }
   .card-logo .logo-img{ width:180px; }
 }
 
+/* Print */
 @media print{
   body{ background:#fff!important; color:#000; }
   .page{ max-width:none; padding:0; }
   .flyer-avatar{ width:260px; height:260px; box-shadow:none; border:2px solid #000; }
-  .card{ box-shadow:none; border-color:#999; }
-  .pill{ box-shadow:none; }
+  .card{ box-shadow:none; border-color:#000; }
 }
